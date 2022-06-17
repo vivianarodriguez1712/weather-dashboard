@@ -1,15 +1,16 @@
-var clickButton = function(event) {
-   var weather = event.target.getAttribute("type");
+var city = document.getElementById("searchBtn");
 
-   if (weather) {
-       getUpdatedWeather(weather);
+var clickButton = function(event) {
+var cityName = city.val.trim();
+   if (cityName) {
+       getUpdatedWeather(cityName);
     
       // clear old content
     repoContainerEl.textContent = ""; 
    }
 }
 
-var getUpdatedWeather = function(weather) [
+var getUpdatedWeather = function(weather) {
     // format the github api url
     var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}";
 
@@ -17,11 +18,12 @@ var getUpdatedWeather = function(weather) [
   fetch(apiUrl)
    .then(function(response) {
      // request was successful
-     if (response.ok) {
+     if (response.ok){
        console.log(response);
        response.json().then(function(data) {
         console.log(data);
         // displayRepos(data, user);
       });
-
-]
+    }
+ })
+}
