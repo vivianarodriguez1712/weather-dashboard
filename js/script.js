@@ -25,10 +25,11 @@ var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "
 fetch(apiUrl).then(function (response) {
   // request was successful
   if (response.ok) {
-    console.log(response);
+    // console.log(response);
     response.json().then(function (data) {
       console.log(data);
-      // displayRepos(data, user);
+      var main = data.main.temp;
+      console.log(main);
     });
   }
 });
