@@ -6,8 +6,8 @@ var searchFormEl = document.querySelector('#search-form');
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
-  var cityName = 'calabasas'
-
+  var cityName = document.getElementById("searchBtn").value;
+  console.log(cityName)
   // if (cityName) {
   //   getUpdatedWeather(cityName);
 
