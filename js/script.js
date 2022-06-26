@@ -1,25 +1,17 @@
 var searchButton = document.getElementById('search-button');
 var searchFormEl = document.querySelector('#search-form');
-// var apiKey = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=4b46a7690a3185fb5de09f671e285e9a`;
-// var apiKey = `https://api.openweathermap.org/data/2.5/weather?q=formSubmitHandler&appid=4b46a7690a3185fb5de09f671e285e9a&units=imperial`;
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
   var cityName = document.getElementById("searchBtn").value;
   console.log(cityName)
-  // if (cityName) {
-  //   getUpdatedWeather(cityName);
 
-    // clear old content
-    // repoContainerEl.textContent = '';
-  // } else {
-  //   alert('Please enter the name of a city.');
-  // }
+  var apiKey = "4b46a7690a3185fb5de09f671e285e9a";
 
 // format the github api url
-// var apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=4b46a7690a3185fb5de09f671e285e9a`;
-var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=4b46a7690a3185fb5de09f671e285e9a&units=imperial";
+// var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=4b46a7690a3185fb5de09f671e285e9a&units=imperial";
+var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
 
 // make a get request to url
 fetch(apiUrl).then(function (response) {
@@ -28,8 +20,26 @@ fetch(apiUrl).then(function (response) {
     // console.log(response);
     response.json().then(function (data) {
       console.log(data);
-      var main = data.main.temp;
-      console.log(main);
+
+    //  Day 1
+      var list = data.list[0];
+      console.log(list);
+      var temp = data.list[0].main.temp;
+      console.log(temp);
+      var date = data.list[0].dt_txt;
+      console.log(date);
+      var wind = data.list[0].wind.speed;
+      console.log(wind);
+      var humidity = data.list[0].main.humidity;
+      console.log(humidity);
+      // var main = data.main.temp;
+      // console.log(main);
+      // var humidity = data.main.humidity;
+      // console.log(humidity);
+      // var weatherDescriptions = data.weather[0].description;
+      // console.log(weatherDescriptions);
+      // var windSpeed = data.wind.speed;
+      // console.log(windSpeed);
     });
   }
 });
