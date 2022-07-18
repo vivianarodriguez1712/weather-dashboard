@@ -1,0 +1,38 @@
+li {
+    border-bottom: 1px solid lightgray;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.forecast {
+    font-size: 20px;
+}
+
+h1{
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px 5px;
+    font-weight: 700;
+    
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+h3{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.fiveDay {
+    padding: 20px;
+    background-color: #1E90FF;
+    color: white;
+    float: left;
+    margin: 10px;
+    border: 1px solid lightgray;
+
+}

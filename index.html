@@ -5,17 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+
+    <div class="container-fluid">
+        <div class="WD">
+            <div class="weather-dashboard text-center">
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
     
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" style="width: 18rem;">
         <h2>Search for a City:</h2>
       <input name="button" id="searchBtn"/>
       <button type="button" id="search-form" class="search-button">Search</button>
     </div>
 
+    <div>
+        <h3>Current Forecast</h3>
+    </div>
+
+    <div class="row">
+        <div>
+            <div class="forecast fiveDayCard">
+                <h3 class=" fiveDay">5-Day Forecast </h3>
+                <div class="row">
+                    <div class="col fiveDay">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
 <script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 </html>
