@@ -41,63 +41,18 @@ fetch(apiUrl).then(function (response) {
         response.json().then(function (data) {
           console.log(data);
 
-      var main = data.main.temp;
-      console.log(main);
-      var humidity = data.main.humidity;
-      console.log(humidity);
-      var weatherDescriptions = data.weather[0].description;
-      console.log(weatherDescriptions);
-      var windSpeed = data.wind.speed;
-      console.log(windSpeed);
+      // var main = data.main.temp;
+      // console.log(main);
+      // var humidity = data.main.humidity;
+      // console.log(humidity);
+      // var weatherDescriptions = data.weather[0].description;
+      // console.log(weatherDescriptions);
+      // var windSpeed = data.wind.speed;
+      // console.log(windSpeed);
 
-      var searchHistory = function(){
-        for(var i = 0; i < cities.length; i++){
-            var searchButton = $('<button value= "'+cities[i]+'">'+cities[i]+'</button>');
-            $("#search").append(searchButton);
-    
         }
-    }
-
-   searchHistory();
-
-   $("form").on("click", "button", function(event) {
-     event.preventDefault();
-
-   cityName= $("input").val().trim();
-
-   if(cityName === ""){
-      alert("input is empty")        
-      return;
-    }
-   
-    else{
-     $("input").val('');
-    
-    var lowerCity = city.map(element => {
-        return element.toLowerCase();
+      }
     });
-    var cityNameLow = cityName.toLowerCase();
-
-    if(lowerCity.includes(cityNameLow)){
-        alert("This city has been serched before")
-    }
-    else{
-       
-        getCityLocation(cityName);
-
-        var newButton = $('<button value= "'+cityName+'">'+ cityName +'</button>');
-        $("#search").append(newButton); 
-
-        saveSearch();
-     }
-    }
-   });
-  });
- };
-});
-};
-});
-};
-
+  }); 
 
 searchFormEl.addEventListener('click', formSubmitHandler);

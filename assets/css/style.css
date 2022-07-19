@@ -5,7 +5,7 @@ li {
 }
 
 .forecast {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 h1{
@@ -28,11 +28,10 @@ h3{
 }
 
 .fiveDay {
-    padding: 20px;
-    background-color: #1E90FF;
-    color: white;
-    float: left;
-    margin: 10px;
     border: 1px solid lightgray;
-
+    padding: 20px;
+    color: white;
+    margin: 10px;
+    background-color: #1E90FF;
+    float: left;
 }
