@@ -43,18 +43,36 @@ fetch(apiUrl).then(function (response) {
         response.json().then(function (data) {
           console.log(data);
 
-      var main = data.main.temp;
-      console.log(main);
-      var humidity = data.main.humidity;
-      console.log(humidity);
-      var weatherDescriptions = data.weather[0].description;
-      console.log(weatherDescriptions);
-      var windSpeed = data.wind.speed;
-      console.log(windSpeed);
+      // var main = data.main.temp;
+      // console.log(main);
+      // var humidity = data.main.humidity;
+      // console.log(humidity);
+      // var weatherDescriptions = data.weather[0].description;
+      // console.log(weatherDescriptions);
+      // var windSpeed = data.wind.speed;
+      // console.log(windSpeed);
 
-        });
-      }
-    }
-  ); 
+     const currentWeatherEl = document.createElement("div");
+
+     const tempEL = document.createElement("div");
+     tempEL.style.textAlign = "center";
+
+     const tempElHeader = document.createElement("h1");
+     tempElHeader.textContent = "Temperature";
+     tempEL.appendChild(tempElHeader);
+
+     const temp = document.createElement("p");
+     temp.textContent = data.list[0].main.temp;
+     tempEL.appendChild(temp);
+
+     currentWeatherEl.appendChild(tempEL);
+     document.querySelector("#target").appendChild(currentWeatherEl);
+
+    });
+   }
+  });
+ }
+});
+};
 
 searchFormEl.addEventListener('click', formSubmitHandler);
