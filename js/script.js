@@ -1,6 +1,8 @@
 var searchButton = document.getElementById('search-button');
 var searchFormEl = document.querySelector('#search-form');
 
+const cities = localStorage.getItem('cities');
+
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
@@ -41,18 +43,18 @@ fetch(apiUrl).then(function (response) {
         response.json().then(function (data) {
           console.log(data);
 
-      // var main = data.main.temp;
-      // console.log(main);
-      // var humidity = data.main.humidity;
-      // console.log(humidity);
-      // var weatherDescriptions = data.weather[0].description;
-      // console.log(weatherDescriptions);
-      // var windSpeed = data.wind.speed;
-      // console.log(windSpeed);
+      var main = data.main.temp;
+      console.log(main);
+      var humidity = data.main.humidity;
+      console.log(humidity);
+      var weatherDescriptions = data.weather[0].description;
+      console.log(weatherDescriptions);
+      var windSpeed = data.wind.speed;
+      console.log(windSpeed);
 
-        }
+        });
       }
-    });
-  }); 
+    }
+  ); 
 
 searchFormEl.addEventListener('click', formSubmitHandler);
