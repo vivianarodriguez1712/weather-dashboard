@@ -34,6 +34,50 @@ fetch(apiUrl).then(function (response) {
       console.log(wind);
       var humidity = data.list[0].main.humidity;
       console.log(humidity);
+
+      var list = data.list[8];
+      console.log(list);
+      var temp = data.list[8].main.temp;
+      console.log(temp);
+      var date = data.list[8].dt_txt;
+      console.log(date);
+      var wind = data.list[8].wind.speed;
+      console.log(wind);
+      var humidity = data.list[8].main.humidity;
+      console.log(humidity);
+
+      var list = data.list[16];
+      console.log(list);
+      var temp = data.list[16].main.temp;
+      console.log(temp);
+      var date = data.list[16].dt_txt;
+      console.log(date);
+      var wind = data.list[16].wind.speed;
+      console.log(wind);
+      var humidity = data.list[16].main.humidity;
+      console.log(humidity);
+
+      var list = data.list[24];
+      console.log(list);
+      var temp = data.list[24].main.temp;
+      console.log(temp);
+      var date = data.list[24].dt_txt;
+      console.log(date);
+      var wind = data.list[24].wind.speed;
+      console.log(wind);
+      var humidity = data.list[24].main.humidity;
+      console.log(humidity);
+
+      var list = data.list[32];
+      console.log(list);
+      var temp = data.list[32].main.temp;
+      console.log(temp);
+      var date = data.list[32].dt_txt;
+      console.log(date);
+      var wind = data.list[32].wind.speed;
+      console.log(wind);
+      var humidity = data.list[32].main.humidity;
+      console.log(humidity);
     });
 
     fetch(apiCurrent).then(function (response) {
@@ -62,7 +106,7 @@ fetch(apiUrl).then(function (response) {
      tempEL.appendChild(tempElHeader);
 
      const temp = document.createElement("p");
-     temp.textContent = data.list[0].main.temp;
+     temp.textContent = data.main.temp;
      tempEL.appendChild(temp);
 
      currentWeatherEl.appendChild(tempEL);
